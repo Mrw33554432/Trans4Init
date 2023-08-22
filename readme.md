@@ -1,42 +1,37 @@
+# Trans4Init: Using Neural Networks to Replace Mathematical Functions in Transformers
 
-## Neural Network Approximation Theory
+## Overview
 
-### Introduction
-This document delves into the theoretical capabilities of neural networks in approximating mathematical functions. The core idea is to explore whether a neural network can not only replicate a given function but also potentially enhance its performance.
+The `Trans4Init` project aims to explore the potential of replacing traditional mathematical functions in Transformer architectures with trained neural networks. The core idea is to leverage the power of neural networks to not only replicate but potentially enhance the performance of these functions.
 
-### Definitions
-1. **Function \( f \)**: A predefined mathematical function that we aim to approximate.
-2. **Function \( g \)**: A hypothetical function that outperforms \( f \) based on a specific performance metric.
-3. **Neural Network \( N \)**: A feedforward neural network with parameters \( \\theta \) that aims to approximate \( f \).
-4. **Performance Metric \( L \)**: A metric (e.g., Mean Squared Error) that measures the difference between the outputs of a function and the true values.
+## Motivation
 
-### Assumptions
-1. \( N \) perfectly replicates \( f \), i.e., for all inputs \( x \),
-   $$ N(x; \\theta) = f(x) $$
-2. There exists a \( g \) such that for all \( x \),
-   $$ L(g, x) < L(f, x) $$
+While Transformer architectures have revolutionized the field of deep learning, especially in NLP tasks, they rely heavily on predefined mathematical functions, such as the positional embedding. These functions serve as initializations or structural components. But what if we could train neural networks to simulate these functions and potentially offer better performance or flexibility?
 
-### Objective
-To demonstrate that there exists a set of parameters \( \\theta' \) for which \( N \) not only approximates \( f \) but also has the potential to approximate \( g \), thereby outperforming \( f \).
+## Project Goals
 
-### Proof
+1. **Neural Network Approximation**: Train neural networks to approximate traditional mathematical functions used in Transformers. This will be done one function at a time, ensuring precision and accuracy in replication.
+   
+2. **Integration into Transformers**: Once a neural network has been trained to approximate a function, integrate it into a Transformer model and assess the performance. 
 
-1. **Neural Network's Approximation Ability**:
-   - By the Universal Approximation Theorem, for any continuous function \( g \) and any \( \\epsilon > 0 \), there exists a neural network \( N' \) and parameters \( \\theta' \) such that:
-     $$ |N'(x; \\theta') - g(x)| < \\epsilon $$
-   for all \( x \).
+3. **Iterative Enhancement**: After integration, further train the entire Transformer model, allowing the neural network components to adapt and potentially enhance their performance in the context of the larger model.
 
-2. **Constructing a Composite Network**:
-   - Define a new neural network \( N'' \) as a combination of \( N \) and \( N' \). Specifically, for any input \( x \), the output of \( N'' \) is:
-     $$ N''(x; \\theta, \\theta') = N(x; \\theta) + N'(x; \\theta') $$
+## Initial Focus: Positional Embedding
 
-3. **Performance Analysis**:
-   - Given the assumption that \( N \) perfectly replicates \( f \), for all \( x \):
-     $$ N''(x; \\theta, \\theta') = f(x) + N'(x; \\theta') $$
-   - Using the approximation ability of \( N' \), we deduce:
-     $$ |f(x) + N'(x; \\theta') - g(x)| < \\epsilon $$
-   This implies that \( N'' \) can potentially approximate \( g \) and thereby outperform \( f \).
+Our first target is the positional embedding function. The traditional positional embedding in Transformers, while effective, is a fixed mathematical formula. We hypothesize that a neural network can be trained to simulate this function and, when integrated into a Transformer, might offer advantages in terms of adaptability and potential performance improvements.
 
-4. **Conclusion**:
-   - Through the composite network \( N'' \), constructed from \( N \) and \( N' \), we've demonstrated the potential of neural networks to not only replicate but also enhance the performance of a given function \( f \).
+## Contributions
+
+We welcome contributions! Whether it's training new neural networks to approximate other functions, enhancing the integration process, or providing insights and optimizations, your input is valuable.
+
+## License
+
+- **Code**: Licensed under the [MIT License](LICENSE-MIT).
+- **Intellectual Content**: Licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-CC).
+
+
+
+## Acknowledgements
+
+This project was inspired by discussions on the potential of neural networks to replicate and enhance traditional mathematical functions. We thank all contributors and supporters.
 
