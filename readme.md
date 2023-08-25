@@ -2,7 +2,7 @@
 
 ## Overview
 
-The `Trans4Init` project aims to explore the potential of replacing traditional mathematical functions in Transformer architectures with trained neural networks. The core idea is to leverage the power of neural networks to not only replicate but potentially enhance the performance of these functions.
+The `Trans4Init` project aims to explore the potential of replacing traditional mathematical functions in Transformer architectures with trained neural networks. The core idea is to leverage the power of neural networks to not only replicate but potentially enhance the performance of these functions. We regard Transformer as a good initialization for Neural network but not a perfect end state.
 
 ## Motivation
 
